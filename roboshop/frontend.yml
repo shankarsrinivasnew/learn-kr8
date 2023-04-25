@@ -5,5 +5,5 @@ metadata:
 spec: 
   containers:
     - name: frontend
-      image: frontend 
+      image: 334531533654.dkr.ecr.us-east-1.amazonaws.com/frontend:2.0.0 
       
