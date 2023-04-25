@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dispatch
+spec: 
+  containers:
+    - name: dispatch
+      image: 334531533654.dkr.ecr.us-east-1.amazonaws.com/dispatch:2.0.0 
+      
