@@ -2,8 +2,25 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: dispatch
+  labels:
+    component: dispatch
 spec: 
   containers:
     - name: dispatch
       image: 334531533654.dkr.ecr.us-east-1.amazonaws.com/dispatch:2.0.0 
       
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: dispatch
+spec:
+  selector:
+    component: dispatch
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+            

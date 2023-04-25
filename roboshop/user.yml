@@ -2,8 +2,22 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: user
-spec: 
+  labels:
+    component: user
+spec:
   containers:
     - name: user
       image: 334531533654.dkr.ecr.us-east-1.amazonaws.com/user:2.0.0
-      
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: user
+spec:
+  selector:
+    component: user
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

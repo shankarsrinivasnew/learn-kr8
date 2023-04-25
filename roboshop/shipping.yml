@@ -2,8 +2,22 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: shipping
-spec: 
+  labels:
+    component: shipping
+spec:
   containers:
     - name: shipping
-      image: 334531533654.dkr.ecr.us-east-1.amazonaws.com/shipping:3.0.0 
-      
+      image: 334531533654.dkr.ecr.us-east-1.amazonaws.com/shipping:3.0.0
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: shipping
+spec:
+  selector:
+    component: shipping
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
