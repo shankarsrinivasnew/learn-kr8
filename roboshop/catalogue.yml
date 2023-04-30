@@ -16,7 +16,7 @@ spec:
   serviceAccountName: catalogue
   containers:
     - name: catalogue
-      image: 334531533654.dkr.ecr.us-east-1.amazonaws.com/catalogue:2.0.0
+      image: 334531533654.dkr.ecr.us-east-1.amazonaws.com/catalogue:3.0.0
       volumeMounts:
         - mountPath: /params
           name: params
