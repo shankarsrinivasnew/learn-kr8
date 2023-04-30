@@ -18,12 +18,15 @@ spec:
     - name: cart
       image: 334531533654.dkr.ecr.us-east-1.amazonaws.com/cart:2.0.0
       volumeMounts:
-      - mountPath: /params
-        name: params
+        - mountPath: /params
+          name: params
   initContainers:
     - name: aws-ssm-param-store
       image : 334531533654.dkr.ecr.us-east-1.amazonaws.com/aws-ssm-param-store:3.0.0
       args: [ "sample:prod.docdb.pass"]
+      volumeMounts:
+        - mountPath: /params
+          name: params
   volumes:
   - name: params
     emptyDir:
@@ -39,5 +42,5 @@ spec:
     component: cart
   ports:
     - protocol: TCP
-      port: 80
+      port: 8080
       targetPort: 8080
