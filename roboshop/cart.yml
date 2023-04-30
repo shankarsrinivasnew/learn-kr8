@@ -18,8 +18,8 @@ spec:
     - name: cart
       image: 334531533654.dkr.ecr.us-east-1.amazonaws.com/cart:2.0.0
       volumeMounts:
-        - mountPath: /params
-          name: params
+      - mountPath: /params
+        name: params
   initContainers:
     - name: aws-ssm-param-store
       image : 334531533654.dkr.ecr.us-east-1.amazonaws.com/aws-ssm-param-store:3.0.0
