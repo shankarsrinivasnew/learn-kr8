@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: user
-      image: 334531533654.dkr.ecr.us-east-1.amazonaws.com/user:2.0.0
+      image: 334531533654.dkr.ecr.us-east-1.amazonaws.com/user:3.0.0
 
 ---
 kind: Service
