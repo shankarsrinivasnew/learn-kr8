@@ -8,6 +8,10 @@ spec:
   containers:
     - name: cart
       image: 334531533654.dkr.ecr.us-east-1.amazonaws.com/cart:2.0.0
+  initContainers:
+    - name: aws-ssm-param-store
+      image : 334531533654.dkr.ecr.us-east-1.amazonaws.com/aws-ssm-param-store:2.0.0
+      args: [ "sample:prod.docdb.pass"]
 
 ---
 kind: Service
